@@ -1,6 +1,6 @@
-package com.example.kakaopay_membership.membership;
+package com.example.kakaopay_membership.membership.entity;
 
-import com.example.kakaopay_membership.user.User;
+import com.example.kakaopay_membership.user.entity.User;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -21,6 +21,10 @@ public class Membership {
     private MembershipStatus membershipStatus;
     private Long point;
 
+    protected Membership() {
+
+    }
+
     @Builder
     public Membership(MembershipType membershipType, LocalDateTime startDate, MembershipStatus membershipStatus, Long point) {
         this.membershipType = membershipType;
@@ -30,8 +34,17 @@ public class Membership {
     }
 
     public void registerUser(User user) {
-        this.user = user;
-        user.addMemberShip(this);
+        if(user!=null) {
+            this.user = user;
+            user.addMemberShip(this);
+        }
     }
 
+    public void inactivate() {
+        membershipStatus = MembershipStatus.N;
+    }
+
+    public void addPoint(Long point) {
+        this.point += point;
+    }
 }

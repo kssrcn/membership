@@ -1,7 +1,7 @@
 package com.example.kakaopay_membership;
 
-import com.example.kakaopay_membership.user.User;
-import com.example.kakaopay_membership.user.UserRepository;
+import com.example.kakaopay_membership.user.entity.User;
+import com.example.kakaopay_membership.user.repository.UserRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

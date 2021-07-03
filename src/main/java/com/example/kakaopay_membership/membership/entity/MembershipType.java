@@ -1,6 +1,6 @@
-package com.example.kakaopay_membership.membership;
+package com.example.kakaopay_membership.membership.entity;
 
-import com.example.kakaopay_membership.exception.MembershipTypeNotMatch;
+import com.example.kakaopay_membership.exception.MembershipTypeNotFound;
 
 public enum MembershipType {
     SPC("spc","happypoint"),
@@ -24,7 +24,7 @@ public enum MembershipType {
             case "cj" :
                 return MembershipType.CJ;
             default :
-                throw new MembershipTypeNotMatch("맴버십 아이디를 잘못 입력했습니다.");
+                throw new MembershipTypeNotFound("맴버십 아이디를 잘못 입력했습니다.");
         }
     }
 

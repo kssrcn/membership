@@ -1,17 +1,17 @@
-package com.example.kakaopay_membership.membership;
+package com.example.kakaopay_membership.membership.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-public class MembershipRegistrationDto {
+public class MembershipAddPointRequestDto {
     private String userId;
     private String membershipId;
-    private String membershipName;
     private Long point;
 
-    public MembershipRegistrationDto(String membershipId, String membershipName, Long point) {
+    @Builder
+    public MembershipAddPointRequestDto(String membershipId, Long point) {
         this.membershipId = membershipId;
-        this.membershipName = membershipName;
         this.point = point;
     }
 
